@@ -3,29 +3,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 
 	<link rel="icon" href="/static/images/favicon.png">
     {% block page_title %}
     {% endblock %}
 </head>
 <body>
-    <div class = "header">
-		<div class = "inner_header">
-			<div class="logo_container">
-				<img src="/static/images/icon.jpg" alt="Grocery Customer Loyalty">
-			</div>
-			<ul class="navigation">
-				<a href="/profile/"><li>Profile</li></a>
-				<a href="/redemption/"><li>Redemption</li></a>
-				<a href="/promotion/"><li>Promotion</li></a>
-			</ul>
-		</div>
-	</div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <div class="container">
+        <a class="navbar-brand" href=""><img src="/static/images/icon.jpg" height = 100vh></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                {% block profile_link %}
+                {% endblock %}
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'redemption' %}">Redemption</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'promotion' %}">Promotion</a>
+              </li>
+            </ul>
+        </div>
+    </div>
+
+</nav>
 {% block page_content %}
 {% endblock %}
 </body>

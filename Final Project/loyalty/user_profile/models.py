@@ -1,3 +1,10 @@
 from django.db import models
 
-# Create your models here.
+
+class User(models.Model):
+    username = models.CharField(max_length=64)
+    name = models.CharField(max_length=100)
+    birthday = models.TextField(max_length=20)
+    address = models.TextField(max_length=100)
+    totalpoints = models.TextField(max_length=10)
+    pointsearned = models.TextField(max_length=10)
