@@ -24,10 +24,12 @@
                 {% endblock %}
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'redemption' %}">Redemption</a>
+                {% block redemption_link %}
+                {% endblock %}
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'promotion' %}">Promotion</a>
+                {% block promotion_link %}
+                {% endblock %}
               </li>
             </ul>
         </div>

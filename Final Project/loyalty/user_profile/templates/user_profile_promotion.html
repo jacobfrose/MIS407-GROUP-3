@@ -1,7 +1,7 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block page_title %}
-<title>Profile - {{user.name}}</title>
+<title>Promotion - {{user.name}}</title>
 {% endblock %}
 {% block profile_link %}
 <a href="{% url 'user_profile' user.pk %}"
@@ -22,19 +22,6 @@
                 </a>
 {% endblock %}
 {% block page_content %}
-<h1 style="padding: 25px 0px 0px 50px">{{ user.name }}</h1>
-<div class="row" style="padding: 25px 50px 75px 75px">
-    <div class="col-md-4">
-        <h5>Username:</h5>
-        <p>{{ user.username }}</p>
-        <h5>Birthday:</h5>
-        <p>{{ user.birthday }}</p>
-        <h5>Address:</h5>
-        <p>{{ user.address }}</p>
-        <h5>Total Current Points:</h5>
-        <p>{{ user.totalpoints }}</p>
-        <h5>Total Points Earned:</h5>
-        <p>{{ user.pointsearned }}</p>
-    </div>
-</div>
+<h1>Promotion</h1>
+
 {% endblock %}
