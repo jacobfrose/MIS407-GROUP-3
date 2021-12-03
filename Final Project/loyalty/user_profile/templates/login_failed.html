@@ -1,0 +1,34 @@
+{% extends "base_login.html" %}
+{% load static %}
+{% block page_title %}
+<title>Login</title>
+{% endblock %}
+{% block profile_link %}
+<a href="{% url 'user_profile' user.pk %}"
+                   class="nav-link">
+                    Profile
+                </a>
+{% endblock %}
+{% block redemption_link %}
+<a href="{% url 'user_profile_redemption' user.pk %}"
+                   class="nav-link">
+                    Redemption
+                </a>
+{% endblock %}
+{% block promotion_link %}
+<a href="{% url 'user_profile_promotion' user.pk %}"
+                   class="nav-link">
+                    Promotion
+                </a>
+{% endblock %}
+{% block page_content %}
+<h1 style="padding: 5px 25px 5px 25px">Log In</h1>
+<p style="padding: 0px 25px 0px 25px; color: red">Invalid Username or Password. Please try again.</p>
+<form action="{% url 'login_request' %}" method="post" style="padding: 5px 25px 25px 25px">
+    {% csrf_token %}
+  <input type="text" id="username" name="username" placeholder="username" style="margin-bottom: 10px"><br>
+  <input type="password" id="password" name="password" placeholder="password" style="margin-bottom: 10px"><br>
+  <input type="submit" value="Log In">
+</form>
+
+{% endblock %}

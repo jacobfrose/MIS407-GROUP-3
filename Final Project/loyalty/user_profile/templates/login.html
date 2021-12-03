@@ -3,24 +3,7 @@
 {% block page_title %}
 <title>Login</title>
 {% endblock %}
-{% block profile_link %}
-<a href="{% url 'user_profile' user.pk %}"
-                   class="nav-link">
-                    Profile
-                </a>
-{% endblock %}
-{% block redemption_link %}
-<a href="{% url 'user_profile_redemption' user.pk %}"
-                   class="nav-link">
-                    Redemption
-                </a>
-{% endblock %}
-{% block promotion_link %}
-<a href="{% url 'user_profile_promotion' user.pk %}"
-                   class="nav-link">
-                    Promotion
-                </a>
-{% endblock %}
+
 {% block page_content %}
 <h1 style="padding: 5px 25px 5px 25px">Log In</h1>
 <form action="{% url 'login_request' %}" method="post" style="padding: 5px 25px 25px 25px">
