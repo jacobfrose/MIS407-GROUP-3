@@ -22,10 +22,11 @@
                 </a>
 {% endblock %}
 {% block page_content %}
-<h1>Login</h1>
-<form>
-  <input type="text" id="username" name="username" placeholder="username"><br>
-  <input type="text" id="password" name="password" placeholder="password"><br>
+<h1 style="padding: 5px 25px 5px 25px">Log In</h1>
+<form action="{% url 'login_request' %}" method="post" style="padding: 5px 25px 25px 25px">
+    {% csrf_token %}
+  <input type="text" id="username" name="username" placeholder="username" style="margin-bottom: 10px"><br>
+  <input type="password" id="password" name="password" placeholder="password" style="margin-bottom: 10px"><br>
   <input type="submit" value="Log In">
 </form>
 

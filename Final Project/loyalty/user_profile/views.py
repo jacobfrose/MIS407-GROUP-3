@@ -21,3 +21,10 @@ def user_profile_redemption(request, pk):
     return render(request, 'user_profile_redemption.html', context)
 def login(request):
     return render(request, 'login.html', {})
+
+def login_request(request):
+    user = User.objects.get(username=request.POST.get("username", ""))
+    context = {
+        'user': user
+    }
+    return render(request, 'user_profile.html', context)
