@@ -22,6 +22,40 @@
                 </a>
 {% endblock %}
 {% block page_content %}
-<h1>Redemption</h1>
+<h1 style="padding: 25px 50px 50px 25px">Redeem</h1>
+<div class="row" style="padding: 10px 10px 10px 15px">
 
+    <div class="col-md-4">
+        <div class="card mb-2">
+            <div class="card-body">
+                <h5 class="card-title"> Your Balance</h5>
+                 <p class="card-text">{{user.totalpoints}}</p>
+                <a href="{% url 'readmore' user.pk %}"
+                   class="btn btn-primary">
+                    Read More
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card mb-2">
+            <div class="card-body">
+                <h5 class="card-title">Items Available for Purchase W/ Points</h5>
+                <img src="/static/images/iphone-13.jpg" alt="Iphone 13" width="100">
+                <p class="card-text">Iphone 13 </p>
+                <p class="card-text">80000 Points</p>
+                <img src="/static/images/surface-pro-8.jpg" atl="Surface Pro 8" width="100">
+                <p class="card-text">Surface Pro 8 </p>
+                <p class="card-text">140,000 Points </p>
+                <a href="{% url 'readmore' user.pk %}"
+                   class="btn btn-primary">
+                    Read More
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+</div>
 {% endblock %}

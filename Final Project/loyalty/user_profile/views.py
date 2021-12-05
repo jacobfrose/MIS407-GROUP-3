@@ -26,6 +26,18 @@ def user_profile_redemption(request, pk):
         'user': user
     }
     return render(request, 'user_profile_redemption.html', context)
+def redeem(request, pk):
+    user = User.objects.get(pk=pk)
+    context = {
+        'user' : user
+    }
+    return render(request, 'redeem.html', context)
+def readmore(request, pk):
+    user  = User.objects.get(pk=pk)
+    context = {
+        'user': user
+    }
+    return render(request, 'readmore.html', context)
 def login(request):
     return render(request, 'login.html', {})
 

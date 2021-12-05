@@ -11,5 +11,6 @@ urlpatterns = [
     path('<int:pk>/', views.user_profile, name='user_profile_high'),
     path('<int:pk>/', views.user_profile, name='user_profile_low'),
     path('promotion/<int:pk>/', views.user_profile_promotion, name="user_profile_promotion"),
-    path('redemption/<int:pk>/', views.user_profile_redemption, name="user_profile_redemption")
+    path('redemption/<int:pk>/', views.user_profile_redemption, name="user_profile_redemption"),
+    path('readmore/<int:pk>/', views.readmore, name='readmore')
 ]
